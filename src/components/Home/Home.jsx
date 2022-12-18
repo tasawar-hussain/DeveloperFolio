@@ -1,14 +1,16 @@
 import React from "react";
+import Typed from "react-typed";
 
 // SVG
 import man from "images/dev.svg";
 
 // Animation
-import { Link } from "react-scroll";
+import {  Link } from "react-scroll";
 import { motion } from "framer-motion";
 
 // CSS
 import "./home.css";
+import Button from "components/Button/Button";
 
 const contentVariants = {
   initial: {
@@ -35,10 +37,23 @@ const Home = () => {
         initial="initial"
         animate="animate"
       >
+        <h2>Hi Devs!</h2>
         <h1>I’m Junaid</h1>
-        <p>I am a Full stack developer and Level one seller at Fiverr. </p>
+        <p>
+          I am a
+          <span
+            style={{ fontSize: "1.5rem", fontWeight: "600", marginLeft: "2%" }}
+          >
+            <Typed
+              strings={["Full Stack Developer", "Level One Seller at Fiverr"]}
+              typeSpeed={50}
+              backSpeed={50}
+              loop
+            />
+          </span>
+        </p>
         <Link
-          className="home-btn"
+          // className="home-btn"
           to={"portfolio"}
           hashSpy={true}
           spy={true}
@@ -47,7 +62,7 @@ const Home = () => {
           offset={-100}
           duration={500}
         >
-          See My Work
+        <Button text={"See my work"} type="submit" />
         </Link>
       </motion.div>
 
